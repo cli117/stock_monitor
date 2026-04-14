@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2026-04-14T20:26:19.108507",
+  "analysis_date": "2026-04-14T22:43:04.698355",
   "portfolio_returns": {
     "ADBE": {
       "current_price": 235.72,
@@ -67,16 +67,16 @@
       }
     },
     "NVDA_2027-06-17_170_CALL": {
-      "current_price": 53.6,
-      "total_value": 5360.0,
+      "current_price": 53.8,
+      "total_value": 5380.0,
       "asset_type": "option",
       "returns": {
-        "previous_trading_day": 10.97,
-        "week_to_date": 10.47,
-        "month_to_date": 36.98,
-        "year_to_date": -1.02,
-        "past_30_trading_days": 18.79,
-        "past_250_trading_days": 199.44
+        "previous_trading_day": 11.39,
+        "week_to_date": 10.88,
+        "month_to_date": 37.49,
+        "year_to_date": -0.65,
+        "past_30_trading_days": 19.24,
+        "past_250_trading_days": 200.56
       }
     },
     "NVDA_2027-12-17_100_CALL": {
