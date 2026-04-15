@@ -1,82 +1,82 @@
 {
-  "analysis_date": "2026-04-15T14:15:34.578337",
+  "analysis_date": "2026-04-15T14:20:20.222273",
   "portfolio_returns": {
     "ADBE": {
-      "current_price": 242.24,
-      "total_value": 38758.38,
+      "current_price": 243.32,
+      "total_value": 38931.2,
       "asset_type": "stock",
       "returns": {
-        "previous_trading_day": 2.77,
-        "week_to_date": 7.5,
-        "month_to_date": -0.35,
-        "year_to_date": -30.79,
-        "past_30_trading_days": -7.69,
-        "past_250_trading_days": -30.86
-      }
-    },
-    "ASML": {
-      "current_price": 1453.03,
-      "total_value": 136255.97,
-      "asset_type": "stock",
-      "returns": {
-        "previous_trading_day": -4.3,
-        "week_to_date": -1.71,
-        "month_to_date": 10.01,
-        "year_to_date": 35.99,
-        "past_30_trading_days": 0.17,
-        "past_250_trading_days": 114.55
-      }
-    },
-    "BRK.B": {
-      "current_price": 475.05,
-      "total_value": 57956.1,
-      "asset_type": "stock",
-      "returns": {
-        "previous_trading_day": -0.52,
-        "week_to_date": -1.01,
-        "month_to_date": -0.87,
-        "year_to_date": -5.49,
-        "past_30_trading_days": -5.92,
-        "past_250_trading_days": -10.06
-      }
-    },
-    "GOOGL": {
-      "current_price": 332.98,
-      "total_value": 286871.73,
-      "asset_type": "stock",
-      "returns": {
-        "previous_trading_day": 0.02,
-        "week_to_date": 4.96,
-        "month_to_date": 15.79,
-        "year_to_date": 6.46,
-        "past_30_trading_days": 6.88,
-        "past_250_trading_days": 113.76
-      }
-    },
-    "MCD": {
-      "current_price": 304.29,
-      "total_value": 33471.9,
-      "asset_type": "stock",
-      "returns": {
-        "previous_trading_day": 0.35,
-        "week_to_date": -0.45,
-        "month_to_date": -2.09,
-        "year_to_date": 0.12,
-        "past_30_trading_days": -10.28,
-        "past_250_trading_days": -0.37
-      }
-    },
-    "NVDA_2027-06-17_170_CALL": {
-      "current_price": 54.92,
-      "total_value": 5492.0,
-      "asset_type": "option",
-      "returns": {
-        "previous_trading_day": 2.08,
-        "week_to_date": 13.19,
-        "month_to_date": 40.35,
+        "previous_trading_day": null,
+        "week_to_date": null,
+        "month_to_date": null,
         "year_to_date": null,
         "past_30_trading_days": null,
         "past_250_trading_days": null
+      }
+    },
+    "ASML": {
+      "current_price": 1457.4,
+      "total_value": 136666.7,
+      "asset_type": "stock",
+      "returns": {
+        "previous_trading_day": -4.01,
+        "week_to_date": -1.41,
+        "month_to_date": 10.34,
+        "year_to_date": 36.4,
+        "past_30_trading_days": 0.47,
+        "past_250_trading_days": 115.2
+      }
+    },
+    "BRK.B": {
+      "current_price": 475.62,
+      "total_value": 58025.64,
+      "asset_type": "stock",
+      "returns": {
+        "previous_trading_day": -0.4,
+        "week_to_date": -0.89,
+        "month_to_date": -0.75,
+        "year_to_date": -5.38,
+        "past_30_trading_days": -5.81,
+        "past_250_trading_days": -9.95
+      }
+    },
+    "GOOGL": {
+      "current_price": 333.33,
+      "total_value": 287177.57,
+      "asset_type": "stock",
+      "returns": {
+        "previous_trading_day": 0.13,
+        "week_to_date": 5.07,
+        "month_to_date": 15.92,
+        "year_to_date": 6.57,
+        "past_30_trading_days": 6.99,
+        "past_250_trading_days": 113.99
+      }
+    },
+    "MCD": {
+      "current_price": 305.33,
+      "total_value": 33586.85,
+      "asset_type": "stock",
+      "returns": {
+        "previous_trading_day": 0.7,
+        "week_to_date": -0.11,
+        "month_to_date": -1.76,
+        "year_to_date": 0.46,
+        "past_30_trading_days": -9.98,
+        "past_250_trading_days": -0.03
+      }
+    },
+    "NVDA_2027-06-17_170_CALL": {
+      "current_price": 54.43,
+      "total_value": 5443.0,
+      "asset_type": "option",
+      "returns": {
+        "previous_trading_day": 1.17,
+        "week_to_date": 12.18,
+        "month_to_date": 39.1,
+        "year_to_date": 0.52,
+        "past_30_trading_days": 20.63,
+        "past_250_trading_days": 205.44
       }
     },
     "NVDA_2027-12-17_100_CALL": {
@@ -93,29 +93,29 @@
       }
     },
     "V": {
-      "current_price": 311.81,
-      "total_value": 46543.13,
+      "current_price": 313.01,
+      "total_value": 46723.0,
       "asset_type": "stock",
       "returns": {
-        "previous_trading_day": 0.14,
-        "week_to_date": 2.45,
-        "month_to_date": 3.17,
-        "year_to_date": -10.91,
-        "past_30_trading_days": -2.6,
-        "past_250_trading_days": -6.45
+        "previous_trading_day": 0.53,
+        "week_to_date": 2.84,
+        "month_to_date": 3.56,
+        "year_to_date": -10.57,
+        "past_30_trading_days": -2.23,
+        "past_250_trading_days": -6.09
       }
     },
     "VOO": {
-      "current_price": 638.98,
-      "total_value": 98660.14,
+      "current_price": 640.02,
+      "total_value": 98821.33,
       "asset_type": "stock",
       "returns": {
-        "previous_trading_day": 0.1,
-        "week_to_date": 2.3,
-        "month_to_date": 6.93,
-        "year_to_date": 2.21,
-        "past_30_trading_days": 1.58,
-        "past_250_trading_days": 30.87
+        "previous_trading_day": 0.26,
+        "week_to_date": 2.47,
+        "month_to_date": 7.11,
+        "year_to_date": 2.38,
+        "past_30_trading_days": 1.74,
+        "past_250_trading_days": 31.09
       }
     }
   }
