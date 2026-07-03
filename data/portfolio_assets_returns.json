@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2026-07-02T23:04:05.511185",
+  "analysis_date": "2026-07-03T23:01:15.249568",
   "portfolio_returns": {
     "ADBE": {
       "current_price": 219.72,
@@ -100,7 +100,7 @@
         "previous_trading_day": -0.87,
         "week_to_date": 1.81,
         "month_to_date": -3.82,
-        "year_to_date": 1.72,
+        "year_to_date": -0.23,
         "past_30_trading_days": -20.51,
         "past_250_trading_days": 35.71
       }
