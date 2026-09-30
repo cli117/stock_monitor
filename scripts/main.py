@@ -407,7 +407,7 @@ def calculate_portfolio_value():
         if result:
             print(f"  -> ✓ 成功: {ticker} {quantity:g} 股 @ ${price:.2f} = ${stock_value:,.2f}")
         else:
-            print(f"  -> ✗ 错误: 经过 {MAX_RETRIES} 次尝试后，仍无法获取 {ticker} 的价格。价值记为0。")
+            raise RuntimeError(f"经过 {MAX_RETRIES} 次尝试后，仍无法获取 {ticker} 的价格。")
 
     # ===== 处理期权 =====
     if DATA_SOURCE == 0 and options_portfolio:
@@ -437,7 +437,7 @@ def calculate_portfolio_value():
             if result:
                 print(f"  -> ✓ 成功: {opt['key']} {opt['quantity']:g} 张 @ ${price:.2f} = ${option_value:,.2f}")
             else:
-                print(f"  -> ✗ 错误: 经过 {MAX_RETRIES} 次尝试后，仍无法获取 {opt['key']} 的价格。价值记为0。")
+                raise RuntimeError(f"经过 {MAX_RETRIES} 次尝试后，仍无法获取 {opt['key']} 的价格。")
 
     # ===== 处理现金 =====
     asset_details['CASH'] = (CASH_AMOUNT, 1.0)

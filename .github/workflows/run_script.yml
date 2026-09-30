@@ -5,6 +5,11 @@ name: Run Python Script
 on:
   # 1. 允许您在 GitHub 页面的 "Actions" 标签下手动点击运行
   workflow_dispatch:
+    inputs:
+      only_if_missing:
+        description: '已有美东当日数据时跳过运行'
+        type: boolean
+        default: false
   
   # 2. 定时触发 (使用 Cron 语法)
   schedule:
@@ -12,6 +17,10 @@ on:
     # - 标准时间期间 (约11月-3月): 对应美东下午 5:17 (UTC-5)
     # - 夏令时期间 (约3月-11月): 对应美东下午 6:17 (UTC-4)
     - cron: '17 22 * * 1-5'
+
+concurrency:
+  group: stock-monitor-data-update
+  cancel-in-progress: false
 
 # 定义具体要执行的任务
 jobs:
@@ -27,6 +36,8 @@ jobs:
       # 第1步：将您的代码仓库下载到虚拟服务器上
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       # 第2步：设置 Python 3.10 环境
       - name: Set up Python
@@ -34,8 +45,32 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Check daily data
+        id: daily_data
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          ONLY_IF_MISSING: ${{ inputs.only_if_missing }}
+        run: |
+          python - <<'PY'
+          import csv
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          should_run = True
+          if os.environ['EVENT_NAME'] == 'schedule' or os.environ['ONLY_IF_MISSING'] == 'true':
+              today = datetime.now(ZoneInfo('America/New_York')).strftime('%Y-%m-%d')
+              with open('data/portfolio_details_history.csv', newline='') as history_file:
+                  should_run = not any(row['date'] == today for row in csv.DictReader(history_file))
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output_file:
+              output_file.write(f"should_run={str(should_run).lower()}\n")
+          print('Daily data refresh required.' if should_run else 'Today\'s data already exists.')
+          PY
+
       # 第3步：安装脚本运行所需的 Python 库
       - name: Install dependencies
+        if: steps.daily_data.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then
@@ -47,6 +82,7 @@ jobs:
 
       # 第4步：运行主分析和收益计算脚本
       - name: Run all data generation scripts
+        if: steps.daily_data.outputs.should_run == 'true'
         env:
           ALPHA_API_KEY: ${{ secrets.ALPHA_API_KEY }}
         run: |
@@ -80,6 +116,7 @@ jobs:
 
       # 第5步：将新生成或更新的文件提交回您的代码仓库
       - name: Commit updated data files
+        if: steps.daily_data.outputs.should_run == 'true'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
